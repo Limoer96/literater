@@ -1,0 +1,22 @@
+nav.navbar.navbar-default
+    .container-fluid
+        a.navbar-brand(href='#', id='brand') XXX文献管理
+
+        ul.navbar-nav.nav
+            li
+                a(href='#') 占位符1
+            li
+                a(href='#') 占位符2
+            li
+                a(href='#') 占位符3
+
+        form.navbar-form.navbar-left(action='/users/regs' method='get' role='form')
+            .form-group
+                input.form-control(type='text' placeholder='快速检索文献' name='title')
+            input.btn.btn-default(type='submit' value='提交')
+
+        ul.navbar-nav.nav.navbar-right
+            li
+                button.btn.btn-primary(id='user_login' data-toggle='modal' data-target='#myModal') 用户登录
+            li
+                button.btn.btn-primary(id='admin_login' data-toggle='modal' data-target='#adminModal') 管理员入口

@@ -1,0 +1,50 @@
+//
+   Created by apple on 16/9/10.
+doctype html
+html
+    head
+        meta(charset='utf8')
+        title= title
+        link(rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/user.index.css')
+        script(src='/javascripts/jquery-1.11.1.min.js')
+        script(src='/javascripts/user.index.js')
+        script(src='/javascripts/bootstrap.min.js')
+    body
+        .container
+            p 欢迎你
+                span#span_name #{uid}
+                //// 这里需要引入字体文件,ok!
+                span.glyphicon.glyphicon-refresh(id='reload' data-toggle="tooltip" data-placement="button" title="Tooltip on left")
+            br
+            #search
+                form.form-inline(role='form')
+                    .form-group
+                        input.form-control(placeholder='全局搜索' type='text' id='se')
+                    .form-group
+                        button.btn.btn-primary(id='btn_ajax') 搜索
+                        input.btn.btn-default(type='reset' value='清空' id='clear')
+            #se_list
+                table.table(id='se_table')
+
+            #borrow_list
+                table.table
+                    caption 已借档案
+                    tr
+                        th 档号
+                        th 借阅日期
+                        th 归还
+                    -each row in rows
+                        tr
+                            td #{row.fid}
+                            td #{row.date}
+                            td
+                                a(href="/users/"+row.userid+"/"+row.fid+"/return")
+                                    button.btn.btn-primary 归还
+
+
+
+
+
+
+

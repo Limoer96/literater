@@ -1,0 +1,15 @@
+.inner_form{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top:20%;
+    left: 25%;
+}
+
+#reset{
+    margin-left: 10%;
+}
+
+#submit{
+    margin-left: 15%;
+}

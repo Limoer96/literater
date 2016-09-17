@@ -1,0 +1,33 @@
+p{
+    float: right;
+}
+#search{
+    /*width: 60%;*/
+    left: 20%;
+    /*background-color: lightcoral;*/
+    text-align: center;
+}
+#se_list{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    left: 15%;
+    top: 15%;
+    overflow: auto;
+    /*background-color: lightseagreen;*/
+}
+#borrow_list{
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    overflow: auto;
+    left: 15%;
+    top: 50%;
+    /*background-color: lightgrey;*/
+}
+#clear{
+    margin-left: 20px;
+}
+#btn_ajax{
+    margin-left: 15px;
+}

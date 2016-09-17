@@ -1,0 +1,44 @@
+//
+   Created by apple on 16/9/9.
+doctype html
+html
+    head
+        title 详情页
+        link(rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.min.css')
+        script(src='/javascripts/jquery-1.11.1.min.js')
+        script(src='/javascripts/bootstrap.min.js')
+    body
+        -var styles = ['文书档案', '科技档案', '财务档案', '人事档案', '声像档案', '电子档案', '其它']
+        ol.breadcrumb
+            li
+                a(href='/users/test') 主页
+            li.active 详情页
+        mixin(rows)
+            table.table.table-hover.table-responsive
+                tr
+                    th 档号
+                    th 标题
+                    th 类别
+                    th 来源
+                    th 页码
+                    th 卷号
+                    th 入库时间
+                    th 可借
+                -each row in rows
+                    tr
+                        td #{row.fid}
+                        td #{row.title}
+                        td #{styles[row.type - 1]}
+                        td #{row.source}
+                        td #{row.pages}
+                        td #{row.folder}
+                        td #{row.innerdate}
+                        td #{row.authority && row.isrended ? 'yes' : 'no'}
+
+        mixin(rows)
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+#search{
+    /*width: 100px;*/
+    margin-left: 40%;
+}
+#brand{
+    margin-left: 10%;
+}
+.conponent{
+    top: 100px;
+    position: absolute;
+    left: 10%;
+    /*background-color: lightgreen;*/
+    width: 980px;
+}
+.squire{
+    width: 220px;
+    height: 200px;
+    float: left;
+    background-color: lightsalmon;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+.squire a{
+    margin-top: 40%;
+}
+#user_login{
+    margin-top: 10%;
+
+}
+
+#admin_login{
+    margin-top: 8%;
+    margin-left: 10px;
+}
+#registerlabel{
+    text-align: center;
+}
+

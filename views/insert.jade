@@ -1,0 +1,87 @@
+doctype html
+html
+    head
+        meta(charset='utf8')
+        title= title
+        link(rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/insert.css')
+        script(src='/javascripts/jquery-1.11.1.min.js')
+        script(src='/javascripts/insert.js')
+        script(src='/javascripts/bootstrap.min.js')
+    body
+        .container
+            ol.breadcrumb
+                li
+                    a(href='/users/test') 主页
+                li.active 入库
+
+            .inner_form
+                form(role='form')
+                    .form-group
+                        label(for='fid') 档号
+                        input.form-control(type='number' id='fid' name='fid' placeholder='档号,最多10位' maxlength=10)
+                    .form-group
+                        label(for='title') 档题
+                        input.form-control(type='text' id='title' name='title' placeholder='输入档题')
+                    .form-group
+                        label(for='f_source') 来源
+                        input.form-control(type='text' id='f_source' name='source' placeholder='来源单位或出处')
+                    .form-group
+                        label(for='folder') 卷号
+                        input.form-control(type='number' max=100 min=0 name='folder' id='folder' placeholder='档案存放的卷号')
+                    .form-group
+                        label(for='pages') 页码
+                        input.form-control(type='number' max=1000 min=0 name='pages' id='pages' placeholder='页码')
+                    label 分类
+                    .radios
+                        .radio-inline
+                            label
+                                input(type='radio' name='type' value=1 class='type')
+                                p 文书档案
+                        .radio-inline
+                            label
+                                input(type='radio' name='type' value=2 class='type')
+                                p 科技档案
+                        .radio-inline
+                            label
+                                input(type='radio' name='type' value=3 class='type')
+                                p 财务档案
+                        .radio-inline
+                            label
+                                input(type='radio' name='type' value=4 class='type')
+                                p 人事档案
+                        .radio-inline
+                            label
+                                input(type='radio' name='type' value=5 class='type')
+                                p 声像档案
+                        .radio-inline
+                            label
+                                input(type='radio' name='type' value=6 class='type')
+                                p 电子档案
+                        .radio-inline
+                            label
+                                input(type='radio' name='type' value=7 class='type')
+                                p 其它
+                    .form-group
+                        label(for='expireday') 保存至日期
+                        input(type='date' id='expireday' name='expiretime')
+
+                    .radio-inline
+                        label
+                            input(type='radio' name='authority' value='1' class='author')
+                            p 允许借阅
+                    .radio-inline
+                        label
+                            input(type='radio' name='authority' value='0' class='author')
+                            p 不允许借阅
+                    .form-group
+                        button.btn.btn-primary(id='submit') 提交
+                        input.btn.btn-default(type='reset' value='重设' id='reset')
+
+
+
+
+
+
+
+

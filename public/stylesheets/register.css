@@ -1,0 +1,13 @@
+#right_btn{
+    margin-left: 10%;
+}
+#left_btn{
+    margin-left: 30%;
+}
+.load{
+    position: absolute;
+    width: 40%;
+    height: 40%;
+    left: 30%;
+    top:20%;
+}

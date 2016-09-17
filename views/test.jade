@@ -1,0 +1,78 @@
+//
+   Created by apple on 16/9/6.
+doctype html
+html
+    head
+        meta(charset='utf8')
+        title= title
+        link(rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='/javascripts/jquery-1.11.1.min.js')
+        //script(src='/javascripts/index.js')
+        script(src='/javascripts/bootstrap.min.js')
+    body
+        include ./header
+
+        mixin box(styles)
+            .conponent
+                -each style in styles
+                    .squire
+                        -var x = styles.indexOf(style) + 1;
+                        a(href='/users/' + x + '/list') #{style}
+
+
+        -var styles = ['文书档案', '科技档案', '财务档案', '人事档案', '声像档案', '电子档案', '其它']
+        mixin box(styles)
+
+        //button.btn.btn-default(data-toggle='modal' data-target='#myModal' aria-hidden='true') 点击弹窗
+        .modal.fade(id='myModal' data-dismiss='true' tabindex="-1" role="dialog" aria-labelledby="myModalLabel")
+            .modal-dialog.modal-sm
+                .modal-content
+                    .modal-header
+                        button(type='button' data-dismiss='modal')
+                            span(aria-hidden='true') &times;
+                            span.sr-only Close
+                        h4.modal-title(id='myModalLabel') 请登录
+                    .modal-body
+                        p= msg
+                        form(role='form' method='post' action='/users/handle' id='user_form' name='login')
+                            .form-group
+                                label(for='uname') 用户名
+                                input.form-control(type='text' placeholder='用户名' id='uname' name='username')
+                            .form-group
+                                label(for='upasswd') 密码
+                                input.form-control(type='password' placeholder='密码' id='upasswd' name='userpassword')
+                            .checkbox
+                                label
+                                    input(type='checkbox' name='u_passwd')
+                                    p 记住密码
+                        p(id='registerlabel') 没有账号? 点此
+                            a(href='/users/register') 注册
+                    .modal-footer
+                        button.btn.btn-primary(data-dismiss='modal') 取消
+                        input.btn.btn-default(type='submit' id='login' value='提交' onclick='document.forms["login"].submit();')
+
+        .modal.fade(id='adminModal' data-dismiss='true' tabindex='-1' role='dialog' aria-labelledby="adminModalDemo")
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button(type='button' data-dismiss='modal')
+                            span(aria-hidden='true') &times;
+                            span.sr-only Close
+                        h4.modal-title(id='adminModalDemo') 管理员登录
+                    .modal-body
+                        form(name='admin_login' method='post' action='/admin/login')
+                            .form-group
+                                label(for='aname')
+                                input.form-control(type='text' placeholder='输入姓名' id='aname' name='adminname')
+                            .form-group
+                                label(for='apasswd')
+                                input.form-control(type='password' placeholder='输入密码' id='apasswd' name='adminpassword')
+                            .checkbox
+                                label
+                                    input(type='checkbox' name='a_passwd')
+                                    p 记住密码
+                    .modal-footer
+                        button.btn.btn-default(data-dismiss='modal') 取消
+                        input.btn.btn-primary(type='submit' value='登录' onclick='document.forms["admin_login"].submit();')
+                        

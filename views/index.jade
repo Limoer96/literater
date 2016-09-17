@@ -1,0 +1,33 @@
+extends layout
+block content
+    mixin box(styles)
+        .conponent
+            -each style in styles
+                .squire
+                    p= style
+
+    -var styles = ['python', 'bs', 'django', 'node.js']
+    mixin box(styles)
+
+.modal.fade(id='userModal' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button(type='button' data-dismiss='modal')
+                    span(aria-hidden='true') &times;
+                    span.sr-only Close
+                h4.modal-title(id='myModalLabel') 这是标题
+            .modal-body
+                h2 表单占位符
+            .modal-footer
+                button.btn.btn-default(type='button' data-dismiss='modal') 取消
+                button.btn.btn-default(type='button') 登录
+
+
+
+
+
+
+
+
+

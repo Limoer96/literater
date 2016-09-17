@@ -1,0 +1,60 @@
+//
+   Created by apple on 16/9/8.
+doctype html
+html
+    head
+        title 管理员主页
+        meta(charset='utf8')
+        link(rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/admin.index.css')
+        script(src='/javascripts/jquery-1.11.1.min.js')
+        script(src='/javascripts/bootstrap.min.js')
+    body
+        .container
+            ul.nav.nav-pills(role='tablist')
+                li(role='presentation')
+                    a(href='/users/test') 主页
+                li(role='presentation')
+                    a(href='/users/test') 登出
+                li(role='presentation')
+                    a(href='/admin/insert') 档案入库
+            -var styles = ['文书档案', '科技档案', '财务档案', '人事档案', '声像档案', '电子档案', '其它']
+            table.table.table-hover.table-responsive
+                caption 过期档案管理
+                tr
+                    th 档号
+                    th 标题
+                    th 类别
+                    th 来源
+                    th 页码
+                    th 卷号
+                    th 入库时间
+                    th 可借
+                    th 销毁
+                -each row in rows
+                    -if (Date.parse(row.expiretime)-Date.now()>0 && Date.parse(row.expiretime)-Date.now()<432000000)
+                        tr
+                            td #{row.fid}
+                            td #{row.title}
+                            td #{styles[row.type - 1]}
+                            td #{row.source}
+                            td #{row.pages}
+                            td #{row.folder}
+                            td #{row.innerdate}
+                            td #{row.authority && row.isrended ? 'yes' : 'no'}
+                            td
+                                a(href='/admin/'+row.fid+'/destroy')
+                                    button.btn.btn-primary 销毁
+
+
+
+
+
+
+
+
+
+
+
+
+
