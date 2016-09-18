@@ -2,6 +2,23 @@ $(document).ready(function(){
    $('#reload').on('click', () =>{
       location.reload();
     });
+
+   $('.send_to').on('click', () => {
+       var userid = $('.get_id').val();
+       var fid = $('.get_fid').val();
+       $.ajax({
+           url: "/users/"+userid+"/"+fid+"/return",
+           type: 'get',
+           success: function (data) {
+               alert(data.message);
+               location.reload();
+           },
+           error: function (data) {
+               alert('error')
+           }
+       })
+   });
+
    $('#btn_ajax').on('click', function (event) {
        event.preventDefault();
        var data = 'title=' + $('#se').val();

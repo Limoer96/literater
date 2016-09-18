@@ -9,6 +9,7 @@ html
         link(rel='stylesheet', href='/stylesheets/admin.index.css')
         script(src='/javascripts/jquery-1.11.1.min.js')
         script(src='/javascripts/bootstrap.min.js')
+        script(src='/javascripts/destroy.success.back.js')
     body
         .container
             ul.nav.nav-pills(role='tablist')
@@ -43,8 +44,11 @@ html
                             td #{row.innerdate}
                             td #{row.authority && row.isrended ? 'yes' : 'no'}
                             td
-                                a(href='/admin/'+row.fid+'/destroy')
-                                    button.btn.btn-primary 销毁
+                                //href='/admin/'+row.fid+'/destroy'
+                                form
+                                    input(type='hidden' value=row.fid class='get_id')
+                                a()
+                                    button.btn.btn-primary(class='submit') 销毁
 
 
 

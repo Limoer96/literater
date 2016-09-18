@@ -36,7 +36,9 @@ router.get('/:fid/destroy', (req, res, next) => {
     db.query('DELETE FROM literater.files WHERE fid=?',req.params.fid,(err, results) => {
          if(err) throw err;
          console.log(results.affectedRows);
-         res.render('destroy_success_back');
+         //res.render('destroy_success_back');
+         res.send({message:'销毁数据成功'});
+         res.end();
     });
 });
 

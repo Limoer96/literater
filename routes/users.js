@@ -117,7 +117,8 @@ router.get('/:userid/:fid/return', (req, res) => {
     } catch (e) {
         console.log(e.message);
     }
-    res.render('return_success_back');
+    res.send({message: '归还成功!'});
+    res.end();
 });
 
 router.get('/regs', (req, res) => {

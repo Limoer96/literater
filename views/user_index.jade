@@ -39,8 +39,12 @@ html
                             td #{row.fid}
                             td #{row.date}
                             td
-                                a(href="/users/"+row.userid+"/"+row.fid+"/return")
-                                    button.btn.btn-primary 归还
+                                //href="/users/"+row.userid+"/"+row.fid+"/return"
+                                form
+                                    input(type='hidden' class='get_id' value=row.userid)
+                                    input(type='hidden' class='get_fid' value=row.fid)
+                                a()
+                                    button.btn.btn-primary(class='send_to') 归还
 
 
 
